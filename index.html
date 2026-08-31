@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riverview Fire Department Referendum | Fort Mill, SC</title>
+    <meta name="description" content="Official voter information regarding the Riverview Fire Department tax district millage referendum in Fort Mill, SC. Learn about funding, tax impacts, and community safety.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#dc2626',
+                            darkRed: '#991b1b',
+                            navy: '#0f172a',
+                            slate: '#1e293b',
+                            gold: '#d97706',
+                            lightBg: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #991b1b 100%);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        .accordion-content.active {
+            max-height: 1000px;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-red-600 selection:text-white">
+
+    <!-- Top Alert Banner -->
+    <div class="bg-brand-darkRed text-white text-xs sm:text-sm font-medium py-2 px-4 text-center">
+        <div class="max-w-7xl mx-auto flex items-center justify-center gap-2 flex-wrap">
+            <span class="inline-block px-2 py-0.5 bg-red-800 rounded font-semibold text-[10px] uppercase tracking-wider">Voter Information</span>
+            <span>Riverview Special Tax District Millage Referendum — Fort Mill, SC</span>
+            <a href="#voter-info" class="underline hover:text-amber-200 transition font-semibold">Check Voting Info &rarr;</a>
+        </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo & Name -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center text-white shadow-md group-hover:bg-red-700 transition">
+                        <i data-lucide="flame" class="w-7 h-7"></i>
+                    </div>
+                    <div>
+                        <span class="block font-heading font-extrabold text-slate-900 text-lg leading-tight">RIVERVIEW FIRE</span>
+                        <span class="block text-xs font-semibold text-red-600 uppercase tracking-widest">Referendum Info</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-700">
+                    <a href="#about" class="hover:text-red-600 transition">Why Needed</a>
+                    <a href="#calculator" class="hover:text-red-600 transition">Tax Calculator</a>
+                    <a href="#faq" class="hover:text-red-600 transition">FAQ</a>
+                    <a href="#voter-info" class="hover:text-red-600 transition">Voter Guide</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden sm:flex items-center gap-4">
+                    <a href="#calculator" class="px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white font-semibold text-sm rounded-lg shadow transition flex items-center gap-2">
+                        <i data-lucide="calculator" class="w-4 h-4"></i> Estimate Impact
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="md:hidden text-slate-700 hover:text-red-600 p-2">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block py-2 text-slate-700 font-medium hover:text-red-600">Why Needed</a>
+            <a href="#calculator" class="block py-2 text-slate-700 font-medium hover:text-red-600">Tax Calculator</a>
+            <a href="#faq" class="block py-2 text-slate-700 font-medium hover:text-red-600">FAQ</a>
+            <a href="#voter-info" class="block py-2 text-slate-700 font-medium hover:text-red-600">Voter Guide</a>
+            <a href="#calculator" class="block w-full text-center py-3 bg-red-600 text-white font-semibold rounded-lg shadow">Estimate Tax Impact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-hero text-white py-16 md:py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-500/20 border border-red-400/30 text-red-200 text-xs font-semibold uppercase tracking-wider">
+                        <i data-lucide="shield-alert" class="w-4 h-4 text-red-400"></i> Fort Mill Special Tax District
+                    </div>
+
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-white">
+                        Protecting Our Community & Supporting <span class="text-red-400">Riverview Fire</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-300 max-w-2xl font-light leading-relaxed">
+                        Our current tax district millage has been capped at <strong class="text-white font-semibold">10 mills</strong> for years. As Fort Mill expands, this cap no longer provides adequate funding for 24/7 staffing, essential life-saving equipment, and rapid response times.
+                    </p>
+
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#calculator" class="px-7 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl shadow-lg hover:shadow-red-600/30 transition flex items-center justify-center gap-3 text-base">
+                            <i data-lucide="calculator" class="w-5 h-5"></i> Calculate Your Tax Impact
+                        </a>
+                        <a href="#faq" class="px-7 py-4 bg-slate-800/80 hover:bg-slate-800 text-slate-200 border border-slate-600 font-semibold rounded-xl transition flex items-center justify-center gap-2 text-base">
+                            <i data-lucide="help-circle" class="w-5 h-5"></i> Read The FAQ
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Key Highlights Box -->
+                <div class="lg:col-span-5">
+                    <div class="bg-slate-900/90 border border-slate-700/80 backdrop-blur-md rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6">
+                        <h3 class="font-heading font-bold text-xl text-white flex items-center gap-2 border-b border-slate-800 pb-4">
+                            <i data-lucide="award" class="w-5 h-5 text-amber-400"></i> Referendum At A Glance
+                        </h3>
+
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <div class="p-3 bg-red-500/10 text-red-400 rounded-lg shrink-0">
+                                    <i data-lucide="clock" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">Current Cap is Outdated</h4>
+                                    <p class="text-sm text-slate-400">The 10-mill limit was enacted years ago and cannot be adjusted without voter authorization.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="p-3 bg-amber-500/10 text-amber-400 rounded-lg shrink-0">
+                                    <i data-lucide="trending-up" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">Rapid Local Growth</h4>
+                                    <p class="text-sm text-slate-400">Increased home construction and traffic in Fort Mill have drastically expanded emergency call volumes.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-lg shrink-0">
+                                    <i data-lucide="home" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">ISO Rating & Insurance Savings</h4>
+                                    <p class="text-sm text-slate-400">A strong, adequately funded fire department keeps ISO ratings high, directly saving homeowners money on insurance.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2 border-t border-slate-800 text-center">
+                            <span class="text-xs text-slate-400">For a $300,000 primary residence, 1 mill equals just <strong class="text-white">$12/year ($1/month)</strong>.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Is Increase Needed Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="text-red-600 font-extrabold uppercase tracking-widest text-xs">Community Safety First</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900">Why Is a Millage Adjustment Needed?</h2>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    The Riverview Fire Department serves residents and businesses within our special tax district in Fort Mill. Here are the core factors driving the referendum:
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14">
+                
+                <!-- Card 1 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:shadow-lg transition flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 bg-red-100 text-red-600 rounded-xl flex items-center justify-center">
+                            <i data-lucide="users" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-slate-900">Population & Call Growth</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Fort Mill has seen rapid residential and commercial expansion over the past decade. Emergency call volume—including structure fires, medical first responder calls, and vehicle accidents—has increased substantially.
+                        </p>
+                    </div>
+                    <ul class="mt-6 space-y-2 text-xs font-medium text-slate-500 border-t border-slate-200 pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i> Higher volume of medical emergency calls</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i> Increased traffic and accident responses</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:shadow-lg transition flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center">
+                            <i data-lucide="truck" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-slate-900">Equipment & Supply Costs</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            The cost of essential fire trucks, protective turnout gear, breathing apparatus (SCBA), and advanced medical equipment has surged over 40% due to national supply chain inflation.
+                        </p>
+                    </div>
+                    <ul class="mt-6 space-y-2 text-xs font-medium text-slate-500 border-t border-slate-200 pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i> Fire engine costs up significantly</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i> Gear must meet mandatory safety standards</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:shadow-lg transition flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center">
+                            <i data-lucide="user-check" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-slate-900">24/7 Professional Coverage</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Ensuring round-the-clock shift staffing requires competitive compensation, healthcare benefits, and ongoing specialized training to retain highly trained firefighters in our area.
+                        </p>
+                    </div>
+                    <ul class="mt-6 space-y-2 text-xs font-medium text-slate-500 border-t border-slate-200 pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i> Fast, reliable response times</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i> Maintains ISO rating for insurance savings</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Tax Calculator Section -->
+    <section id="calculator" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-14">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/20 text-red-400 text-xs font-semibold uppercase tracking-wider">
+                    <i data-lucide="calculator" class="w-4 h-4"></i> Interactive Tool
+                </div>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white">Property Tax Impact Estimator</h2>
+                <p class="text-slate-300 text-base sm:text-lg">
+                    In South Carolina, property tax for fire districts is calculated using your property’s <strong class="text-white">assessed value</strong> (4% for owner-occupied primary residences). Use the calculator below to see your estimated investment.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-slate-800/90 border border-slate-700 rounded-3xl p-6 sm:p-10 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Inputs Column -->
+                <div class="lg:col-span-7 space-y-6">
+                    
+                    <!-- Property Value Slider & Input -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <label for="home-value-input" class="text-sm font-semibold text-slate-200">Estimated Home Market Value:</label>
+                            <span id="home-value-display" class="font-heading font-extrabold text-xl text-red-400">$350,000</span>
+                        </div>
+                        <input type="range" id="home-value-range" min="100000" max="1000000" step="10000" value="350000" class="w-full h-3 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-red-600">
+                        <div class="flex justify-between text-xs text-slate-400">
+                            <span>$100,000</span>
+                            <span>$500,000</span>
+                            <span>$1,000,000</span>
+                        </div>
+                    </div>
+
+                    <!-- Assessment Ratio Selection -->
+                    <div class="space-y-2">
+                        <label class="text-sm font-semibold text-slate-200 block">Property Classification (SC Tax Rate):</label>
+                        <div class="grid grid-cols-2 gap-3">
+                            <button type="button" id="btn-primary" class="py-2.5 px-4 rounded-xl border border-red-500 bg-red-600/20 text-white font-medium text-xs sm:text-sm flex items-center justify-center gap-2 transition">
+                                <i data-lucide="home" class="w-4 h-4 text-red-400"></i> Primary Home (4%)
+                            </button>
+                            <button type="button" id="btn-secondary" class="py-2.5 px-4 rounded-xl border border-slate-700 bg-slate-800 text-slate-400 font-medium text-xs sm:text-sm flex items-center justify-center gap-2 transition hover:border-slate-500">
+                                <i data-lucide="building" class="w-4 h-4"></i> Commercial/2nd (6%)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Proposed Millage Adjustment Selection -->
+                    <div class="space-y-2">
+                        <label for="millage-slider" class="text-sm font-semibold text-slate-200 block flex justify-between">
+                            <span>Proposed Millage Increase:</span>
+                            <span id="millage-display" class="text-red-400 font-bold">+5 Mills</span>
+                        </label>
+                        <input type="range" id="millage-range" min="1" max="10" step="1" value="5" class="w-full h-3 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-red-600">
+                        <div class="flex justify-between text-xs text-slate-400">
+                            <span>+1 Mill</span>
+                            <span>+5 Mills</span>
+                            <span>+10 Mills</span>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-700/60 text-xs text-slate-400 leading-relaxed">
+                        <i data-lucide="info" class="w-4 h-4 inline text-amber-400 mr-1"></i>
+                        Formula: <code>(Market Value &times; Assessment Ratio) &times; (Millage Increase &divide; 1,000)</code>. South Carolina law taxes primary residential property at 4% of market value.
+                    </div>
+
+                </div>
+
+                <!-- Calculation Results Output Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-gradient-to-br from-red-950/40 via-slate-900 to-slate-900 border border-red-500/30 rounded-2xl p-6 sm:p-8 text-center space-y-6 shadow-xl">
+                        
+                        <div class="space-y-1">
+                            <span class="text-xs uppercase font-bold tracking-widest text-slate-400">Estimated SC Assessed Value</span>
+                            <div id="assessed-val" class="font-heading text-2xl font-bold text-slate-200">$14,000</div>
+                        </div>
+
+                        <div class="py-4 border-y border-slate-700/60 space-y-2">
+                            <span class="text-xs uppercase font-bold tracking-widest text-red-400">Estimated Tax Increase</span>
+                            <div id="annual-cost" class="font-heading text-4xl sm:text-5xl font-black text-white">$70.00</div>
+                            <span class="text-xs text-slate-300 block">per year</span>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-2 text-center pt-2">
+                            <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+                                <span class="text-[11px] text-slate-400 block uppercase font-semibold">Monthly Impact</span>
+                                <span id="monthly-cost" class="font-heading font-extrabold text-lg text-emerald-400">$5.83</span>
+                            </div>
+                            <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+                                <span class="text-[11px] text-slate-400 block uppercase font-semibold">Daily Impact</span>
+                                <span id="daily-cost" class="font-heading font-extrabold text-lg text-amber-400">$0.19</span>
+                            </div>
+                        </div>
+
+                        <p class="text-[11px] text-slate-400 italic">
+                            *Note: Figures are estimates based on standard SC County assessment formulas. Actual tax bills depend on final county valuation.
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center space-y-4 mb-14">
+                <span class="text-red-600 font-extrabold uppercase tracking-widest text-xs">Got Questions?</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900">Frequently Asked Questions</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto text-base">
+                    Here are answers to the most common questions regarding the Riverview Fire Department millage referendum.
+                </p>
+            </div>
+
+            <!-- FAQ Accordion List -->
+            <div class="space-y-4">
+
+                <!-- FAQ Item 1 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button class="accordion-btn w-full px-6 py-5 text-left font-heading font-bold text-slate-900 text-lg flex justify-between items-center hover:text-red-600 transition">
+                        <span>1. What is the Riverview Fire Department Millage Referendum?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+                    </button>
+                    <div class="accordion-content px-6 text-slate-600 text-sm leading-relaxed">
+                        <p class="pb-6">
+                            The referendum asks voters within the Riverview Special Tax District in Fort Mill, SC, to approve an increase to the maximum millage cap for fire protection services. Currently, our tax district millage is legally capped at 10 mills. The referendum allows the district to adjust the millage up to the proposed new cap to fund essential fire department operations, staffing, and equipment.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button class="accordion-btn w-full px-6 py-5 text-left font-heading font-bold text-slate-900 text-lg flex justify-between items-center hover:text-red-600 transition">
+                        <span>2. What is a "mill" and how does it affect my tax bill?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+                    </button>
+                    <div class="accordion-content px-6 text-slate-600 text-sm leading-relaxed">
+                        <p class="pb-6">
+                            A mill represents $1 of tax for every $1,000 of a property’s <em>assessed value</em> (not market value). In South Carolina, an owner-occupied primary residence is assessed at 4% of market value. For example, a $300,000 home has an assessed value of $12,000 ($300,000 &times; 0.04). Therefore, <strong>1 mill equals exactly $12 per year</strong> (or $1.00 per month) for a $300,000 primary home.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button class="accordion-btn w-full px-6 py-5 text-left font-heading font-bold text-slate-900 text-lg flex justify-between items-center hover:text-red-600 transition">
+                        <span>3. Why is 10 mills no longer sufficient to support Riverview Fire Department?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+                    </button>
+                    <div class="accordion-content px-6 text-slate-600 text-sm leading-relaxed">
+                        <p class="pb-6">
+                            The 10-mill cap was established years ago when our population was a fraction of what it is today. Rapid commercial and residential growth in Fort Mill has dramatically increased emergency calls. At the same time, inflation has raised the cost of fire engines, turnout gear, safety equipment, and competitive pay required to maintain 24/7 professional staffing.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button class="accordion-btn w-full px-6 py-5 text-left font-heading font-bold text-slate-900 text-lg flex justify-between items-center hover:text-red-600 transition">
+                        <span>4. How does funding Riverview Fire Department save homeowners money on insurance?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+                    </button>
+                    <div class="accordion-content px-6 text-slate-600 text-sm leading-relaxed">
+                        <p class="pb-6">
+                            Insurance companies determine homeowner insurance premiums largely based on a fire department’s <strong>ISO (Insurance Services Office) Public Protection Classification rating</strong>. Well-equipped departments with adequate staffing, fast response times, and modern equipment earn lower ISO scores. Maintaining a top ISO rating directly reduces annual home insurance premiums for residents across our district, often saving homeowners more money on insurance than the millage increase costs.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button class="accordion-btn w-full px-6 py-5 text-left font-heading font-bold text-slate-900 text-lg flex justify-between items-center hover:text-red-600 transition">
+                        <span>5. Will the tax increase automatically jump to the maximum cap right away?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+                    </button>
+                    <div class="accordion-content px-6 text-slate-600 text-sm leading-relaxed">
+                        <p class="pb-6">
+                            No. Voting "YES" authorizes the Fire District Board to set the annual millage up to the approved cap as necessary during the annual budgeting process. Millage is evaluated each fiscal year transparently to ensure only the revenue needed for operating expenses, staffing, and capital improvements is levied.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button class="accordion-btn w-full px-6 py-5 text-left font-heading font-bold text-slate-900 text-lg flex justify-between items-center hover:text-red-600 transition">
+                        <span>6. Who is eligible to vote on this referendum?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+                    </button>
+                    <div class="accordion-content px-6 text-slate-600 text-sm leading-relaxed">
+                        <p class="pb-6">
+                            Any registered voter residing within the boundaries of the Riverview Special Tax District in Fort Mill / York County, SC is eligible to vote on this ballot measure.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 7 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button class="accordion-btn w-full px-6 py-5 text-left font-heading font-bold text-slate-900 text-lg flex justify-between items-center hover:text-red-600 transition">
+                        <span>7. How will the funds be audited and managed?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+                    </button>
+                    <div class="accordion-content px-6 text-slate-600 text-sm leading-relaxed">
+                        <p class="pb-6">
+                            All tax revenue collected in the Riverview Tax District is strictly dedicated to fire protection and emergency services. Funds are subject to public oversight, open budget hearings, and independent annual financial audits through York County fiscal management.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Voter Info / Action Section -->
+    <section id="voter-info" class="py-20 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-red-600 font-extrabold uppercase tracking-widest text-xs">Voter Participation</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900">Make Your Voice Heard on Election Day</h2>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        Your vote directly impacts emergency response services, fire safety, and public protection in Fort Mill. Ensure you are registered and know where to vote.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <div class="w-10 h-10 bg-red-600 text-white rounded-lg flex items-center justify-center shrink-0">
+                                <i data-lucide="check-square" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Check Registration Status</h4>
+                                <p class="text-xs text-slate-600">Verify your current voter registration and address with the South Carolina Election Commission.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
+                            <div class="w-10 h-10 bg-slate-800 text-white rounded-lg flex items-center justify-center shrink-0">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Find Your Polling Location</h4>
+                                <p class="text-xs text-slate-600">Locate your designated York County voting precinct before election day.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <a href="https://scvotes.gov" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 bg-red-600 hover:bg-red-700 text-white font-bold text-sm rounded-xl shadow transition inline-flex items-center gap-2">
+                            <span>Visit SCVotes.gov</span>
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                        <a href="https://www.yorkcountygov.com/168/Voter-Registration-Elections" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 bg-slate-800 hover:bg-slate-900 text-white font-bold text-sm rounded-xl transition inline-flex items-center gap-2">
+                            <span>York County Election Office</span>
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Info Box Card -->
+                <div class="lg:col-span-6">
+                    <div class="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 shadow-2xl relative overflow-hidden space-y-6">
+                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-red-600/20 rounded-full blur-3xl"></div>
+
+                        <h3 class="font-heading font-extrabold text-2xl text-white flex items-center gap-3">
+                            <i data-lucide="calendar" class="w-6 h-6 text-red-500"></i> Key Election Dates
+                        </h3>
+
+                        <div class="space-y-4 divide-y divide-slate-800">
+                            <div class="pt-3 flex justify-between items-center">
+                                <div>
+                                    <span class="block text-xs text-slate-400 uppercase font-semibold">Voter Registration Deadline</span>
+                                    <span class="text-sm font-bold text-slate-200">30 Days Before Election</span>
+                                </div>
+                                <span class="px-3 py-1 bg-amber-500/20 text-amber-300 text-xs rounded-full font-semibold">Important</span>
+                            </div>
+
+                            <div class="pt-3 flex justify-between items-center">
+                                <div>
+                                    <span class="block text-xs text-slate-400 uppercase font-semibold">Absentee / Early Voting</span>
+                                    <span class="text-sm font-bold text-slate-200">Check York County Schedule</span>
+                                </div>
+                                <span class="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full font-semibold">Early Voting</span>
+                            </div>
+
+                            <div class="pt-3 flex justify-between items-center">
+                                <div>
+                                    <span class="block text-xs text-slate-400 uppercase font-semibold">Referendum Polling Hours</span>
+                                    <span class="text-sm font-bold text-slate-200">7:00 AM – 7:00 PM</span>
+                                </div>
+                                <span class="px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full font-semibold">Election Day</span>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-slate-800/80 rounded-xl border border-slate-700 text-xs text-slate-300">
+                            <strong>Note for Voters:</strong> Remember to bring a valid photo ID (such as an SC Driver's License, SC Voter ID card, Military ID, or US Passport) when voting at your precinct.
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-red-600 text-white rounded-lg flex items-center justify-center font-bold">
+                        <i data-lucide="flame" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="block font-heading font-bold text-white text-base">Riverview Fire Department Referendum</span>
+                        <span class="block text-xs text-slate-500">Fort Mill, SC Special Tax District</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-6 text-sm">
+                    <a href="#about" class="hover:text-white transition">Why Needed</a>
+                    <a href="#calculator" class="hover:text-white transition">Tax Estimator</a>
+                    <a href="#faq" class="hover:text-white transition">FAQ</a>
+                    <a href="#voter-info" class="hover:text-white transition">Voter Guide</a>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-slate-900 text-xs text-slate-500 flex flex-col sm:flex-row justify-between gap-4 text-center sm:text-left">
+                <p>&copy; Riverview Referendum Voter Information. Custom domain: <a href="https://riverviewreferendum.org" class="text-slate-400 underline">riverviewreferendum.org</a>.</p>
+                <p>Designed to inform voters within the Riverview Fire District in York County, Fort Mill, South Carolina.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Accordion functionality
+        const accordionBtns = document.querySelectorAll('.accordion-btn');
+
+        accordionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('[data-lucide="chevron-down"]');
+
+                // Toggle active class
+                const isActive = content.classList.contains('active');
+
+                // Close all others
+                document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('active'));
+                document.querySelectorAll('.accordion-btn i').forEach(i => i.style.transform = 'rotate(0deg)');
+
+                if (!isActive) {
+                    content.classList.add('active');
+                    if (icon) icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Open first accordion item by default
+        if (accordionBtns.length > 0) {
+            accordionBtns[0].click();
+        }
+
+        // Interactive Tax Impact Calculator Logic
+        let assessmentRatio = 0.04; // Default: Primary Residence (4%)
+
+        const homeValueRange = document.getElementById('home-value-range');
+        const homeValueDisplay = document.getElementById('home-value-display');
+        const millageRange = document.getElementById('millage-range');
+        const millageDisplay = document.getElementById('millage-display');
+        const btnPrimary = document.getElementById('btn-primary');
+        const btnSecondary = document.getElementById('btn-secondary');
+
+        const assessedValEl = document.getElementById('assessed-val');
+        const annualCostEl = document.getElementById('annual-cost');
+        const monthlyCostEl = document.getElementById('monthly-cost');
+        const dailyCostEl = document.getElementById('daily-cost');
+
+        function calculateTax() {
+            const marketValue = parseFloat(homeValueRange.value);
+            const millageIncrease = parseFloat(millageRange.value);
+
+            // SC Assessed Value = Market Value * Assessment Ratio (0.04 or 0.06)
+            const assessedValue = marketValue * assessmentRatio;
+
+            // 1 Mill = $0.001 of Assessed Value
+            const annualIncrease = assessedValue * (millageIncrease / 1000);
+            const monthlyIncrease = annualIncrease / 12;
+            const dailyIncrease = annualIncrease / 365;
+
+            // Update displays
+            homeValueDisplay.textContent = '$' + marketValue.toLocaleString();
+            millageDisplay.textContent = '+' + millageIncrease + ' Mill' + (millageIncrease > 1 ? 's' : '');
+
+            assessedValEl.textContent = '$' + assessedValue.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+            annualCostEl.textContent = '$' + annualIncrease.toFixed(2);
+            monthlyCostEl.textContent = '$' + monthlyIncrease.toFixed(2);
+            dailyCostEl.textContent = '$' + dailyIncrease.toFixed(2);
+        }
+
+        if (homeValueRange && millageRange) {
+            homeValueRange.addEventListener('input', calculateTax);
+            millageRange.addEventListener('input', calculateTax);
+
+            btnPrimary.addEventListener('click', () => {
+                assessmentRatio = 0.04;
+                btnPrimary.className = "py-2.5 px-4 rounded-xl border border-red-500 bg-red-600/20 text-white font-medium text-xs sm:text-sm flex items-center justify-center gap-2 transition";
+                btnSecondary.className = "py-2.5 px-4 rounded-xl border border-slate-700 bg-slate-800 text-slate-400 font-medium text-xs sm:text-sm flex items-center justify-center gap-2 transition hover:border-slate-500";
+                calculateTax();
+            });
+
+            btnSecondary.addEventListener('click', () => {
+                assessmentRatio = 0.06;
+                btnSecondary.className = "py-2.5 px-4 rounded-xl border border-red-500 bg-red-600/20 text-white font-medium text-xs sm:text-sm flex items-center justify-center gap-2 transition";
+                btnPrimary.className = "py-2.5 px-4 rounded-xl border border-slate-700 bg-slate-800 text-slate-400 font-medium text-xs sm:text-sm flex items-center justify-center gap-2 transition hover:border-slate-500";
+                calculateTax();
+            });
+
+            // Initial calculation
+            calculateTax();
+        }
+    </script>
+</body>
+</html>
