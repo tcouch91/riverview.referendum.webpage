@@ -1,16 +1,20 @@
 /**
  * Riverview Referendum — "Arrange a Petition Visit" form backend.
  *
- * This script is bound to a Google Sheet. Every submission from the website is
- * saved as a row in that sheet FIRST, then an email notification is sent.
- * If the email fails, the row is still saved and the failure is noted in the
- * "Email Notification" column, so no request is ever silently lost.
+ * Every submission from the website is saved as a row in a Google Sheet FIRST,
+ * then an email notification is sent. If the email fails, the row is still
+ * saved and the failure is noted in the "Email Notification" column, so no
+ * request is ever silently lost.
  *
  * Setup instructions: see SETUP.md in this folder.
  *
- * Recipients are NOT stored in this file. Set them in
- * Project Settings → Script Properties → NOTIFY_EMAILS
- * (comma-separated, e.g. contactus@riverviewreferendum.org).
+ * Settings live in Project Settings → Script Properties, not in this file:
+ *   NOTIFY_EMAILS   (required) comma-separated recipients,
+ *                   e.g. contactus@riverviewreferendum.org
+ *   SPREADSHEET_ID  (optional) the ID from the sheet's URL
+ *                   (docs.google.com/spreadsheets/d/<ID>/edit). Needed only if
+ *                   this script was NOT created from the sheet via
+ *                   Extensions → Apps Script.
  */
 
 const SHEET_NAME = 'Submissions';
@@ -85,9 +89,26 @@ function doPost(e) {
   return json_({ success: true });
 }
 
-/** Visiting the Web app URL in a browser shows this. Handy for checking the deployment. */
+/**
+ * Visiting the Web app URL in a browser shows this. Handy for checking the
+ * deployment: "ready" is true only when the sheet and recipients are set up.
+ */
 function doGet() {
-  return json_({ ok: true, service: 'Riverview petition form', time: new Date().toISOString() });
+  const status = { ok: true, service: 'Riverview petition form', time: new Date().toISOString() };
+  try {
+    getSheet_();
+    status.sheet = 'found';
+  } catch (err) {
+    status.sheet = 'ERROR: ' + err.message;
+  }
+  try {
+    getRecipients_();
+    status.recipients = 'set';
+  } catch (err) {
+    status.recipients = 'ERROR: ' + err.message;
+  }
+  status.ready = status.sheet === 'found' && status.recipients === 'set';
+  return json_(status);
 }
 
 /**
@@ -95,14 +116,16 @@ function doGet() {
  * It asks for permissions, creates the header row, and sends a test email.
  */
 function setup() {
-  getSheet_();
+  const sheet = getSheet_();
+  const ss = getSpreadsheet_();
+  console.log('Using spreadsheet "' + ss.getName() + '", tab "' + sheet.getName() + '": ' + ss.getUrl());
   const recipients = getRecipients_();
   MailApp.sendEmail({
     to: recipients,
     subject: 'Test: Riverview petition form is connected',
     body: 'This is a test from the Riverview petition form backend.\n\n' +
       'If you received this, email notifications are working.\n' +
-      'Submissions are saved here: ' + SpreadsheetApp.getActiveSpreadsheet().getUrl(),
+      'Submissions are saved here: ' + ss.getUrl(),
     name: 'Riverview Referendum Website',
   });
   console.log('Setup complete. Test email sent to: ' + recipients);
@@ -112,7 +135,7 @@ function setup() {
 // ---------------------------------------------------------------------------
 
 function sendNotification_(values) {
-  const sheetUrl = SpreadsheetApp.getActiveSpreadsheet().getUrl();
+  const sheetUrl = getSpreadsheet_().getUrl();
   const rowsHtml = FIELDS.map(function (f) {
     return '<tr><td style="padding:6px 12px;border:1px solid #ddd;background:#f8fafc;font-weight:bold;">' +
       escapeHtml_(f) + '</td><td style="padding:6px 12px;border:1px solid #ddd;">' +
@@ -146,8 +169,25 @@ function getRecipients_() {
   return recipients;
 }
 
-function getSheet_() {
+/**
+ * The spreadsheet that stores submissions: the one named by the SPREADSHEET_ID
+ * script property if set, otherwise the sheet this script was created from.
+ */
+function getSpreadsheet_() {
+  const id = (PropertiesService.getScriptProperties().getProperty('SPREADSHEET_ID') || '').trim();
+  if (id) {
+    return SpreadsheetApp.openById(id);
+  }
   const ss = SpreadsheetApp.getActiveSpreadsheet();
+  if (!ss) {
+    throw new Error('No spreadsheet found. This script is not attached to a sheet, so set the ' +
+      'SPREADSHEET_ID script property to the ID in the sheet\'s URL (Project Settings → Script Properties).');
+  }
+  return ss;
+}
+
+function getSheet_() {
+  const ss = getSpreadsheet_();
   let sheet = ss.getSheetByName(SHEET_NAME);
   if (!sheet) {
     sheet = ss.insertSheet(SHEET_NAME);

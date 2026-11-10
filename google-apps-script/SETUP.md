@@ -63,7 +63,15 @@ account, and notification emails will come **from this account's Gmail address**
 3. Scroll to **Script Properties**, then **Add script property**:
    - Property: `NOTIFY_EMAILS`
    - Value: `contactus@riverviewreferendum.org`
-4. Click **Save script properties**.
+4. **Only if the script was NOT created from the sheet** (via Extensions → Apps Script), add a second property:
+   - Property: `SPREADSHEET_ID`
+   - Value: the long ID from the sheet's address bar, between `/d/` and `/edit`
+     (`docs.google.com/spreadsheets/d/`**`THIS_PART`**`/edit`).
+
+   *How to tell:* open the sheet and click **Extensions → Apps Script**. If it opens your script, it's attached
+   and you can skip this step. If it opens a blank "Untitled project," it isn't attached, so close that tab
+   without saving and add `SPREADSHEET_ID`.
+5. Click **Save script properties**.
 
 The recipient address lives here, not in the code, so no personal address is ever in the public repo.
 To change who gets notified later, edit only this value. No redeploy is needed.
@@ -87,7 +95,9 @@ To change who gets notified later, edit only this value. No redeploy is needed.
      they can't see the sheet.
 4. Click **Deploy** and copy the **Web app URL**. It looks like
    `https://script.google.com/macros/s/AKfy.../exec`.
-5. Paste that URL into a new browser tab. You should see `{"ok":true,"service":"Riverview petition form",...}`.
+5. Paste that URL into a new browser tab. You should see `"ready":true` along with `"sheet":"found"` and
+   `"recipients":"set"`. If either says `ERROR`, the message explains what's missing. Fix it, then
+   **Manage deployments → pencil → New version → Deploy**.
 
 ### B6. Connect the website
 1. In `index.html`, find this line near the bottom:
