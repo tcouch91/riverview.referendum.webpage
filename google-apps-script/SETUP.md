@@ -77,7 +77,9 @@ The recipient address lives here, not in the code, so no personal address is eve
 To change who gets notified later, edit only this value. No redeploy is needed.
 
 ### B4. Authorize and test
-1. Go back to the **Editor** (`< >` icon). In the function dropdown at the top, choose **setup**, then click **Run**.
+1. Go back to the **Editor** (`< >` icon). In the function dropdown next to **Run**, make sure **setup** is selected,
+   then click **Run**. If another function such as `doPost` is selected, Run looks like it worked but does nothing.
+   A successful run logs `Using spreadsheet "…"` and `Setup complete`.
 2. Google asks for permission. Click **Review permissions**, choose the account, then
    **Advanced → Go to Riverview Petition Form (unsafe) → Allow**.
    (The "unverified" warning appears because this is your own private script, not a published app.)

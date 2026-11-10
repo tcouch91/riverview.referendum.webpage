@@ -36,8 +36,34 @@ const MAX_FIELD_LENGTH = 2000;
 const HEADERS = ['Received'].concat(FIELDS, ['Email Notification', 'Volunteer Follow-up Notes']);
 const NOTIFY_STATUS_COL = FIELDS.length + 2; // 1-based column of "Email Notification"
 
+/**
+ * Run this ONCE from the Apps Script editor: choose "setup" in the function
+ * dropdown (it's listed first, so it's the default), then click Run.
+ * It asks for permissions, creates the header row, and sends a test email.
+ */
+function setup() {
+  const sheet = getSheet_();
+  const ss = getSpreadsheet_();
+  console.log('Using spreadsheet "' + ss.getName() + '", tab "' + sheet.getName() + '": ' + ss.getUrl());
+  const recipients = getRecipients_();
+  MailApp.sendEmail({
+    to: recipients,
+    subject: 'Test: Riverview petition form is connected',
+    body: 'This is a test from the Riverview petition form backend.\n\n' +
+      'If you received this, email notifications are working.\n' +
+      'Submissions are saved here: ' + ss.getUrl(),
+    name: 'Riverview Referendum Website',
+  });
+  console.log('Setup complete. Test email sent to: ' + recipients);
+  console.log('Remaining email quota today: ' + MailApp.getRemainingDailyQuota());
+}
+
 /** Handles form submissions from the website. */
 function doPost(e) {
+  if (!e) {
+    console.warn('doPost only runs when the website submits the form. To test, choose "setup" in the ' +
+      'function dropdown and click Run.');
+  }
   const params = (e && e.parameter) || {};
 
   // Bots fill in the hidden honeypot field. Pretend success, store nothing.
@@ -93,7 +119,10 @@ function doPost(e) {
  * Visiting the Web app URL in a browser shows this. Handy for checking the
  * deployment: "ready" is true only when the sheet and recipients are set up.
  */
-function doGet() {
+function doGet(e) {
+  if (!e) {
+    console.warn('doGet only runs when the web app URL is opened. To test, choose "setup" and click Run.');
+  }
   const status = { ok: true, service: 'Riverview petition form', time: new Date().toISOString() };
   try {
     getSheet_();
@@ -109,27 +138,6 @@ function doGet() {
   }
   status.ready = status.sheet === 'found' && status.recipients === 'set';
   return json_(status);
-}
-
-/**
- * Run this ONCE from the Apps Script editor (select "setup" → Run).
- * It asks for permissions, creates the header row, and sends a test email.
- */
-function setup() {
-  const sheet = getSheet_();
-  const ss = getSpreadsheet_();
-  console.log('Using spreadsheet "' + ss.getName() + '", tab "' + sheet.getName() + '": ' + ss.getUrl());
-  const recipients = getRecipients_();
-  MailApp.sendEmail({
-    to: recipients,
-    subject: 'Test: Riverview petition form is connected',
-    body: 'This is a test from the Riverview petition form backend.\n\n' +
-      'If you received this, email notifications are working.\n' +
-      'Submissions are saved here: ' + ss.getUrl(),
-    name: 'Riverview Referendum Website',
-  });
-  console.log('Setup complete. Test email sent to: ' + recipients);
-  console.log('Remaining email quota today: ' + MailApp.getRemainingDailyQuota());
 }
 
 // ---------------------------------------------------------------------------
